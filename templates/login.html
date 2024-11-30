@@ -1,0 +1,6 @@
+<form method="post">
+    {{ form.hidden_tag() }}  <!-- Включает CSRF-токен -->
+    <p>{{ form.username.label }}<br>{{ form.username(size=32) }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+
