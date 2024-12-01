@@ -70,4 +70,3 @@ def extract_csrf_token(response_data):
     if csrf_input:
         return csrf_input["value"]
     return None
-

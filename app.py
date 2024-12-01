@@ -4,11 +4,13 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 from flask_wtf.csrf import CSRFProtect, CSRFError
-
+import os
+from dotenv import load_dotenv
 
 app = Flask(__name__)
+load_dotenv()
 # Set the secret key to some random bytes. Keep this really secret!
-app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+app.secret_key =os.getenv("flask_secret_key")
 app.config["TESTING"] = True
 csrf = CSRFProtect(app)
 
