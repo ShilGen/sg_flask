@@ -9,16 +9,18 @@ from flask_wtf.csrf import CSRFProtect, CSRFError
 app = Flask(__name__)
 # Set the secret key to some random bytes. Keep this really secret!
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
-app.config['TESTING'] = True
+app.config["TESTING"] = True
 csrf = CSRFProtect(app)
+
 
 class LoginForm(FlaskForm):
     username = StringField("Username", validators=[DataRequired()])
     submit = SubmitField("Login")
 
+
 @app.errorhandler(CSRFError)
 def handle_csrf_error(e):
-    return render_template('csrf_error.html', reason=e.description), 400
+    return render_template("csrf_error.html", reason=e.description), 400
 
 
 @app.route("/")
