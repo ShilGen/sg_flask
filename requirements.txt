@@ -1,4 +1,5 @@
 black
+dotenv
 Flask
 Flask-WTF
 pytest
