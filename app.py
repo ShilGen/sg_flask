@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 app = Flask(__name__)
 load_dotenv()
 # Set the secret key to some random bytes. Keep this really secret!
-app.secret_key =os.getenv("flask_secret_key")
+app.secret_key = os.getenv("flask_secret_key")
 app.config["TESTING"] = True
 csrf = CSRFProtect(app)
 
